@@ -5,7 +5,7 @@ import java.util.stream.Collectors;
 
 public class Sum3 {
     public static void main(String[] args) {
-        List<List<Integer>> results = threeSumBF(new int[]{-1, 0, 1, 2, -1, -4});
+        List<List<Integer>> results = threeSumBF(new int[]{-1, 2, 1, 2, -1, -4});
         for (List<Integer> result:results) {
             final StringBuilder sb=new StringBuilder();
             sb.append(" [ ");
@@ -25,11 +25,11 @@ public class Sum3 {
             int j = i + 1;
             int k = nums.length - 1;
 
-            if (i > 0 && nums[i] == nums[i - 1]) {
+            if (i > 0 && nums[i] == nums[i - 1]) {                      //skip the same numbers
                 continue;
             }
             while (j < k) {
-                if (k < nums.length - 1 && nums[k] == nums[k + 1]) {
+                if (k < nums.length - 1 && nums[k] == nums[k + 1]) {    //skip the same numbers from  end of the array
                     k--;
                     continue;
                 }
