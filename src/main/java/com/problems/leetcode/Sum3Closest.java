@@ -3,7 +3,7 @@ import java.util.Arrays;
 
 public class Sum3Closest {
     public static void main(String[] args) {
-        int results = threeSumClosest(new int[]{-3,0,1,2},1);
+        int results = threeSumClosest(new int[]{1,1,1,1},3);
         System.out.println(results);
     }
 
@@ -23,8 +23,14 @@ public class Sum3Closest {
                     total3Sum=nums[i]+nums[k]+nums[j];
                     complement=tempComplement;
                 }
-                ++j;
-                --k;
+                if ((nums[i]+nums[k]+nums[j])>target){
+                    --k;
+                }else if((nums[i]+nums[k]+nums[j])<target){
+                    ++j;
+                }else{
+                    --k;
+                    ++j;
+                }
             }
         }
         return total3Sum;
