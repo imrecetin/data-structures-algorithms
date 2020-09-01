@@ -3,7 +3,7 @@ package com.problems.leetcode;
 import java.util.HashMap;
 import java.util.Map;
 
-public class TwoSum {
+public class Sum2 {
 
     public static void main(String[] args) {
         int[] indices = twoSumBF(new int[]{2, 7, 11, 15}, 9);
