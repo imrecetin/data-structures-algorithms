@@ -6,6 +6,6 @@ public class CreateTargetArrayInTheGivenOrder {
     }
 
     public static int[] createTargetArray(int[] nums, int[] index) {
-
+        return new int[]{};
     }
 }
