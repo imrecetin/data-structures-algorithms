@@ -28,9 +28,9 @@ public class RotateImage {
      */
     public static void rotate(int[][] matrix) {
         if(matrix == null || matrix.length == 0 || matrix[0].length == 0) return;
-        reverseMatrixFirstRowAndLastRow(matrix,0,matrix.length-1);
+        reverseMatrixRows(matrix,0,matrix.length-1);
         for (int i=0;i<matrix.length;++i){
-            for (int j=i;j<matrix[i].length;++j){
+            for (int j=i + 1;j<matrix[i].length;++j){
                 swapMatrixCells(matrix,i,j);
             }
         }
@@ -42,7 +42,7 @@ public class RotateImage {
         matrix[j][i]=temp;
     }
 
-    private static void reverseMatrixFirstRowAndLastRow(int[][] matrix, int rowNumber1,int rowNumber2) {
+    private static void reverseMatrixRows(int[][] matrix, int rowNumber1,int rowNumber2) {
         int [] temp=matrix[rowNumber2];
         matrix[rowNumber2] = matrix[rowNumber1];
         matrix[rowNumber1]=temp;
