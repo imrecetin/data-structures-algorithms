@@ -2,7 +2,7 @@ package com.problems.leetcode;
 
 public class RotateImage {
     public static void main(String[] args) {
-        int [][] matrix = new int[][]{{5,1,9,11},{2,4,8,10},{13,3,6,7},{15,14,12,16}};
+        int [][] matrix = new int[][]{{5,1,9,11,1},{2,4,8,10,1},{13,3,6,7,1},{15,14,12,16,1},{5,1,9,11,1}};
         printMatrix(matrix);
         rotate(matrix);
         printMatrix(matrix);
@@ -19,6 +19,24 @@ public class RotateImage {
         System.out.println();
     }
 
+    public static void rotateWithSimpleSolution(int[][] matrix) {
+        int s = 0, e = matrix.length - 1;
+        while(s < e){
+            int[] temp = matrix[s];
+            matrix[s] = matrix[e];
+            matrix[e] = temp;
+            s++; e--;
+        }
+
+        for(int i = 0; i < matrix.length; i++){
+            for(int j = i+1; j < matrix[i].length; j++){
+                int temp = matrix[i][j];
+                matrix[i][j] = matrix[j-1][i];
+                matrix[j-1][i] = temp;
+            }
+        }
+    }
+
     /*
      * clockwise rotate
      * first reverse up to down, then swap the symmetry
@@ -28,9 +46,11 @@ public class RotateImage {
      */
     public static void rotate(int[][] matrix) {
         if(matrix == null || matrix.length == 0 || matrix[0].length == 0) return;
-        reverseMatrixRows(matrix,0,matrix.length-1);
+        for (int i=0;i<matrix.length/2;++i){
+            reverseMatrixRows(matrix,i,matrix.length-1-i);
+        }
         for (int i=0;i<matrix.length;++i){
-            for (int j=i + 1;j<matrix[i].length;++j){
+            for (int j=i+1;j<matrix[i].length;++j){
                 swapMatrixCells(matrix,i,j);
             }
         }
