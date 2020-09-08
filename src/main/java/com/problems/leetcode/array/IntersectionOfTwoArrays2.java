@@ -1,4 +1,4 @@
-package com.problems.leetcode;
+package com.problems.leetcode.array;
 
 import com.sun.crypto.provider.HmacPKCS12PBESHA1;
 

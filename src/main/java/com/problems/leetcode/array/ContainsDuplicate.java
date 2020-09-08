@@ -1,4 +1,4 @@
-package com.problems.leetcode;
+package com.problems.leetcode.array;
 
 import sun.lwawt.macosx.CSystemTray;
 

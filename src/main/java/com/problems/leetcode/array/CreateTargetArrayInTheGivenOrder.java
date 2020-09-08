@@ -1,4 +1,4 @@
-package com.problems.leetcode;
+package com.problems.leetcode.array;
 
 public class CreateTargetArrayInTheGivenOrder {
     public static void main(String[] args) {
