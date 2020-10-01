@@ -1,9 +1,27 @@
 package com.problems.leetcode.linkedlist;
 
 
+import sun.jvm.hotspot.memory.Space;
+
+import java.sql.Time;
+
 public class ReverseLinkedList {
     public static void main(String[] args) {
 
+    }
+
+    //Time complexity : O(n)O(n). Assume that nn is the list's length, the time complexity is O(n)O(n).
+    //Space complexity : O(1)O(1).
+    public ListNode reverseList(ListNode head) {
+        ListNode prev = null;
+        ListNode curr = head;
+        while (curr != null) {
+            ListNode nextTemp = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = nextTemp;
+        }
+        return prev;
     }
 
     //Time complexity : O(n)O(n). Assume that nn is the list's length, the time complexity is O(n)O(n).
