@@ -28,6 +28,9 @@ public class RemoveNthNodeFromEndOfList {
         return dummy.next;
     }
 
+    //Time complexity : O(L)O(L).
+    //The algorithm makes one traversal of the list of LL nodes. Therefore time complexity is O(L)O(L).
+    //Space complexity : O(1)O(1).
     public ListNode removeNthFromEndV2(ListNode head, int n) {
         ListNode dummy = new ListNode(0);
         dummy.next = head;
