@@ -22,6 +22,8 @@ public class ValidateBinarySearchTree {
         return true;
     }
 
+    //The above recursion could be converted into iteration, with the help of stack.
+    // DFS would be better than BFS since it works faster here.
     public static boolean isValidBSTWithIteration(TreeNode root,Integer lowerLimit,Integer upperLimit) {
         if (root==null)
             return true;
