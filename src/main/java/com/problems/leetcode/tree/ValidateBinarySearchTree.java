@@ -54,6 +54,4 @@ public class ValidateBinarySearchTree {
         return true;
     }
 
-
-
 }
