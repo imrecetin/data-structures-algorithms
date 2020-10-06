@@ -2,6 +2,8 @@ package com.problems.leetcode.tree;
 
 import com.sun.scenario.effect.Brightpass;
 
+import java.util.LinkedList;
+
 public class ValidateBinarySearchTree {
 
     public static void main(String[] args) {
@@ -22,11 +24,36 @@ public class ValidateBinarySearchTree {
         return true;
     }
 
+    static LinkedList<TreeNode> stack = new LinkedList();
+    static LinkedList<Integer> uppers = new LinkedList(), lowers = new LinkedList();
+
+    public static void update(TreeNode root, Integer lower, Integer upper) {
+        stack.add(root);
+        lowers.add(lower);
+        uppers.add(upper);
+    }
+
     //The above recursion could be converted into iteration, with the help of stack.
     // DFS would be better than BFS since it works faster here.
     public static boolean isValidBSTWithIteration(TreeNode root,Integer lowerLimit,Integer upperLimit) {
-        if (root==null)
-            return true;
+        Integer lower = null, upper = null, val;
+        update(root, lower, upper);
+
+        while (!stack.isEmpty()) {
+            root = stack.poll();
+            lower = lowers.poll();
+            upper = uppers.poll();
+
+            if (root == null) continue;
+            val = root.val;
+            if (lower != null && val <= lower) return false;
+            if (upper != null && val >= upper) return false;
+            update(root.right, val, upper);
+            update(root.left, lower, val);
+        }
         return true;
     }
+
+
+
 }
