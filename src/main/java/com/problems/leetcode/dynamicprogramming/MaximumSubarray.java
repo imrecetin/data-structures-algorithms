@@ -48,4 +48,28 @@ public class MaximumSubarray {
         //allBest = Math.max(allBest, allSum);//no need, if allSum will win, leftBest/rightBest/middleBest already won
         return new int[]{leftBest, rightBest, allBest, allSum};
     }
+
+    public int maxSubArray(int[] nums){
+        int maxCurrent = nums[0];
+        int maxGlobal = nums[0];
+
+        for (int i = 1; i < nums.length ; i++) {
+            maxCurrent = Math.max(nums[i], maxCurrent + nums[i]);
+            if (maxCurrent > maxGlobal) {
+                maxGlobal = maxCurrent;
+            }
+        }
+        return maxGlobal;
+    }
+
+    public int maxSubArrayDynamicProgramming(int[] a) {
+        int l_max = a[0];
+        int g_max = a[0];
+        for (int i = 1; i < a.length; i++){
+            l_max = Math.max (a[i], a[i]+l_max);
+            g_max = Math.max(g_max, l_max);
+        }
+        return g_max;
+    }
+
 }
