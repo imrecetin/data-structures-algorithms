@@ -26,4 +26,8 @@ public class PowerOfThree {
     public boolean isPowerOfThreeBaseConversion(int n) {
         return Integer.toString(n, 3).matches("^10*$");
     }
+
+    public boolean isPowerOfThreeMathematics(int n) {
+        return (Math.log10(n) / Math.log10(3)) % 1 == 0;
+    }
 }
