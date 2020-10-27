@@ -16,4 +16,14 @@ public class PowerOfThree {
         }
         return n == 1;
     }
+
+    //We will use the regular expression above for checking if the string starts with 1 ^1,
+    // is followed by zero or more 0s 0* and contains nothing else ＄.
+    /**
+     * Time complexity : O(log_3n)
+     * Space complexity : O(log_3n)
+     * */
+    public boolean isPowerOfThreeBaseConversion(int n) {
+        return Integer.toString(n, 3).matches("^10*$");
+    }
 }
