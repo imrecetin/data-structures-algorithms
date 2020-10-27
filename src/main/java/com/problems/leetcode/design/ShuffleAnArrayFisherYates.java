@@ -2,6 +2,13 @@ package com.problems.leetcode.design;
 
 import java.util.Random;
 
+/**
+ * Time complexity : O(n)
+ * The Fisher-Yates algorithm runs in linear time, as generating a random index and swapping two values can be done in constant time.
+ * Space complexity : O(n)
+ * Although we managed to avoid using linear space on the auxiliary array from the brute force approach,
+ * we still need it for reset, so we're stuck with linear space complexity.
+ * */
 public class ShuffleAnArrayFisherYates {
 
     private int[] array;

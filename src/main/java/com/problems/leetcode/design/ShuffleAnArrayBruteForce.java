@@ -4,6 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * Time complexity : {O}(n^2)
+ * The quadratic time complexity arises from the calls to list.remove (or list.pop),
+ * which run in linear time. nn linear list removals occur, which results in a fairly easy quadratic analysis.
+ * Space complexity : {O}(n)
+ * Because the problem also asks us to implement reset, we must use linear additional space to store the original array.
+ * Otherwise, it would be lost upon the first call to shuffle.
+ */
 public class ShuffleAnArrayBruteForce {
 
     private int[] array;
