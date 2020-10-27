@@ -63,4 +63,11 @@ public class FizzBuzzMultithreaded {
             }
         }
     }
+
+    /**
+     * Thread A will call fizz() to check for divisibility of 3 and outputs fizz.
+     * Thread B will call buzz() to check for divisibility of 5 and outputs buzz.
+     * Thread C will call fizzbuzz() to check for divisibility of 3 and 5 and outputs fizzbuzz.
+     * Thread D will call number() which should only output the numbers.
+     * */
 }
