@@ -8,8 +8,6 @@ public class LongestPalindromicSubstring {
      * Since expanding a palindrome around its center could take O(n) time, the overall complexity is O(n^2)O(n
      * Space complexity : O(1)
      * */
-
-    abba
     public String longestPalindromeV1(String s) {
         if (s == null || s.length() < 1)
             return "";
